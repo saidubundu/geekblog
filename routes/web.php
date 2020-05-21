@@ -21,7 +21,27 @@ Route::get('/blog/{post}', [
     'uses' => 'PostController@show',
     'as' => 'blog.show'
 ]);
+Route::get('/category/{category}', [
+    'uses' => 'PostController@category',
+    'as' => 'category'
+]);
+
+Route::put('backend/posts/restore/{post}', [
+    'uses' => 'Backend\PostsController@restore',
+    'as' => 'posts.restore'
+]);
+
+Route::delete('/backend/posts/force-destroy/{post}',[
+    'uses' => 'Backend\PostsController@forceDestroy',
+    'as' => 'posts.force-destroy'
+]);
+
+Route::get('/users/{user}', [
+    'uses' => 'PostController@user',
+    'as' => 'user'
+]);
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'Backend\HomeController@index')->name('home');
+Route::resource('/backend/posts', 'Backend\PostsController');

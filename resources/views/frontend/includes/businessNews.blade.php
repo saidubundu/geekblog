@@ -13,13 +13,12 @@
                 <div class="col-xl-12">
                     <div class="recent-news-wrapper mb-30">
                         <div class="recent-news-img pos-rel">
-                            <a href="#"><img src="{{$bznz->image_url}}" alt=""></a>
+                            <a href="{{$bznz->url}}"><img src="{{$bznz->image_url}}" alt=""></a>
                             <div class="recent-news-text">
                                 <span class="recent-cart color-4"><a href="#">building</a></span>
-                                <h5><a href="#">Influential quarter, work
-                                        igran hamper trade</a></h5>
+                                <h5><a href="{{$bznz->url}}">{!! str_limit($bznz->body,35) !!}</a></h5>
                                 <div class="post-content-meta news-02-meta">
-                                    <span><a class="meta-11 meta-22" href="#"><i class="far fa-clock"></i> 25 Nov 2019</a></span>
+                                    <span><a class="meta-11 meta-22" href="{{$bznz->url}}"><i class="far fa-clock"></i> 25 Nov 2019</a></span>
                                 </div>
                             </div>
                         </div>

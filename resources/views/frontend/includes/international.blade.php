@@ -15,15 +15,15 @@
                     <div class="hero-wrapper hero-04-wrapper mb-30">
 
                         <div class="hero-img pos-rel">
-                            <a href="#"><img src="{{$inter->image_url}}" alt=""></a>
+                            <a ><img src="{{$inter->image_url}}" alt=""></a>
                             <span><a class="post-cart color-8" href="#">travel</a></span>
                             <div class="hero-text">
                                 <div class="hero-meta">
-                                    <span><a href="#"><i class="far fa-user"></i> Kalima DJ</a></span>
+                                    <span><a href="{{$inter->user_url}}"><i class="far fa-user"></i> {{$inter->user->name}}</a></span>
                                     <span><i class="far fa-calendar-alt"></i> 12 July 2018</span>
                                 </div>
-                                <h3><a href="#">{{$inter->title}}</a></h3>
-                                <a href="#"><span>Read More</span> <i class="far fa-long-arrow-right"></i></a>
+                                <h3><a href="{{$inter->url}}">{{str_limit($inter->title, 50)}}</a></h3>
+                                <a href="{{$inter->url}}"><span>Read More</span> <i class="far fa-long-arrow-right"></i></a>
                             </div>
                         </div>
 

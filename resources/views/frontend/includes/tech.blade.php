@@ -7,15 +7,15 @@
         <div class="hero-item mb-30">
             <div class="hero-wrapper hero-03-wrapper">
                 <div class="hero-img pos-rel">
-                    <a href="#"><img src="{{$tech->image_url}}" alt=""></a>
+                    <a ><img src="{{$tech->image_url}}" alt=""></a>
                     <span><a class="post-cart" href="#">fashion</a></span>
                     <div class="hero-text">
                         <div class="hero-meta">
                             <span><a href="#"><i class="far fa-calendar-alt"></i> 12 July 2018</a></span>
                             <span><i class="far fa-comment"></i> (05)</span>
                         </div>
-                        <h3><a href="#">{{$tech->excerpt}}</a></h3>
-                        <a href="#"><span>Read More</span> <i class="far fa-long-arrow-right"></i></a>
+                        <h3><a href="{{$tech->url}}">{!! str_limit($tech->body, 50) !!}</a></h3>
+                        <a href="{{$tech->url}}"><span>Read More</span> <i class="far fa-long-arrow-right"></i></a>
                     </div>
                 </div>
             </div>

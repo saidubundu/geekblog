@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Category;
 use App\Post;
 use Illuminate\Support\ServiceProvider;
 
@@ -25,9 +26,9 @@ class ComposerServiceProvider extends ServiceProvider
     public function boot()
     {
         //
-//        view()->composer('frontend.includes.lifeStyle', function ($view){
-//            $lifeStyle = Post::life()->take(5)->get();
-//            return $view->with()
-//        });
+        view()->composer('frontend.partials.navBar', function ($view){
+            $navCategories = Category::all();
+            return $view->with('navCategories', $navCategories);
+        });
     }
 }

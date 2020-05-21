@@ -18,11 +18,11 @@ class CreatePostsTable extends Migration
             $table->bigInteger('user_id')->unsigned()->index();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('restrict');
             $table->string('title');
-            $table->text('excerpt');
             $table->text('body');
             $table->string('image')->nullable();
-            $table->integer('view_count');
-            $table->timestamp('published_at');
+            $table->integer('view_count')->default(0);
+            $table->timestamp('published_at')->nullable();
+            $table->softDeletes('deleted_at');
             $table->timestamps();
         });
     }

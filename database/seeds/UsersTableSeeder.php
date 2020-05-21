@@ -18,8 +18,8 @@ class UsersTableSeeder extends Seeder
 
         DB::table('users')->insert([
             [
-                'name' => 'Door Church',
-                'email' => 'door@peektower.com',
+                'name' => 'Saidu Bundu Kamara',
+                'email' => 'saidu@peektower.com',
                 'password' => bcrypt('password'),
             ],
 

@@ -7,14 +7,14 @@
             @foreach($healths as $health)
             <div class="post-sm-list fix mb-20">
                 <div class="post-sm-img f-left">
-                    <a href="#"><img src="{{$health->image_url}}" alt=""></a>
+                    <a ><img src="{{$health->image_url}}" alt=""></a>
                 </div>
                 <div class="post-2-content fix">
                     <div class="post-content-meta">
-                        <span><a class="meta-1" href="#">Organic</a></span>
+                        <span><a class="meta-1" href="#">{{$health->category->name}}</a></span>
                         <span><a class="meta-11" href="#"><i class="far fa-clock"></i> 25 Nov 2019</a></span>
                     </div>
-                    <h4><a href="#">{{str_limit($health->excerpt,40)}}</a></h4>
+                    <h4><a href="{{$health->url}}">{{str_limit($health->body,50)}}</a></h4>
                 </div>
             </div>
            @endforeach

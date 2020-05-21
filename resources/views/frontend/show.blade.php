@@ -9,7 +9,7 @@
                 <div class="row">
                     <div class="col-xl-12">
                         <div class="layout-img mb-50">
-                            <img src="assets/img/layout/14.jpg" alt="">
+                            <img src="{{$post->image_url}}" alt="">
                         </div>
                     </div>
                 </div>
@@ -19,55 +19,20 @@
                             <div class="lifestyle-wrapper mb-55">
                                 <div class="lifestyle-text lifestyle-02-text">
                                     <span class="recent-cart color-1 mr-20"><a href="#">technology</a></span>
-                                    <span class="post-box-cart1 mr-20"><a href="#"><i class="far fa-user"></i>Malingga D. Silva</a></span>
+                                    <span class="post-box-cart1 mr-20"><a href="{{$post->user_url}}"><i class="far fa-user"></i>{{$post->user->name}}</a></span>
                                     <span class="post-box-cart1 mr-20"><a href="#"><i class="far fa-clock"></i> 25 Nov 2019</a></span>
                                     <span class="post-box-cart1"><a href="#"><i class="far fa-comment"></i> Comments (05)</a></span>
 
-                                    <h4><a href="#">Road Transport Act BRTA police not ready for enforcement DSCC Councillor Manju on remand in narcotics.</a></h4>
-                                    <p>But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure</p>
+                                    <h4><a href="#">{{$post->title}}</a></h4>
+                                    <p>{!! $post->body !!}</p>
                                 </div>
                             </div>
-                            <blockquote>
-                                <p>Fast UX Research An Easier Way To Engage Stakeholders And Speed Up The Research Process</p>
-                            </blockquote>
-                            <div class="row mt-60 mb-20">
-                                <div class="col-xl-7">
-                                    <div class="layout-text mb-30">
-                                        <h3>Why Learn English News Papers ?</h3>
-                                        <p>At vero eos accusamus et iusto odio dignissimos ducimus blanditiis pra
-                                            esentium voluptatum deleniti atque corrupti quos dolores et quas moletias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia avoids pleasure itself, because it is pleasure, but because those who rationally encounter.</p>
-                                        <ul class="layout-link">
-                                            <li>Using Low Vision As My Tool To Help Me Teach WordPress</li>
-                                            <li>A Conference Without Slides Meet SmashingConf Toronto 2019</li>
-                                            <li>Embarking Adventures Inspiring Desktop Wallpapers</li>
-                                            <li>WordPress Local Development For Beginners: From Setup</li>
-                                            <li>Sharing Code Between Projects: Lessons Learned</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="col-xl-5">
-                                    <div class="layout-img mb-30">
-                                        <img src="assets/img/layout/01.jpg" alt="">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="layout-content mt-25 mb-50">
-                                <h3>Working Together How Designers And Developers Can Communicate  To Create Better Projects Why Learn English News Papers ?</h3>
-                                <p>On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled and when nothing prevents our being able to do what we like best, every pleasure is to be welcomed and every pain avoided. But in certain circumstances and owing to the claims of duty or the obligations of business it will frequently occur that pleasures have to be repudiated and annoyances accepted. </p>
-                                <p>The wise man therefore always holds in these matters to this principle of selection: he rejects pleasures to secure other greater pleasures, or else he endures pains to avoid worse painAt vero eos accusamus et iusto odio dignissimos ducimus blanditiis pra</p>
-                            </div>
+
+
                             <div class="banner-2-img mb-60">
-                                <a href="#"><img src="assets/img/banner/004.jpg" alt=""></a>
+                                <a href="#"><img src="{{asset('img/banner/004.jpg')}}" alt=""></a>
                             </div>
-                            <h3 class="layout-title">How To Create An Audio/Video Recording App With React Native An TutorialWorking Together How Designers And Developers</h3>
-                            <div class="layout-2-img mt-40 mb-55">
-                                <div class="layout-2-img pos-rel">
-                                    <img src="assets/img/layout/03.jpg" alt="">
-                                    <div class="layout-video-icon">
-                                        <a class="popup-video" href="https://www.youtube.com/watch?v=LTXD6XZXc3U"><i class="fas fa-play"></i></a>
-                                    </div>
-                                </div>
-                            </div>
+
                             <div class="row">
                                 <div class="col-xl-8 col-lg-7 col-md-6">
                                     <div class="blog-post-tag">
@@ -93,7 +58,7 @@
                                     <img src="assets/img/layout/author.jpg" alt="">
                                 </div>
                                 <div class="author-text fix">
-                                    <h3>Mark B. Santiago</h3>
+                                    <h3>{{$post->user->name}}</h3>
                                     <p>Avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself</p>
                                     <div class="author-icon">
                                         <a href="#"><i class="fab fa-facebook-f"></i></a>

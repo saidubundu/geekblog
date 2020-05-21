@@ -3,9 +3,9 @@
         <div class="row">
             <div class="col-xl-12 col-lg-12 hero-big">
                 <div class="section-title section-2 mb-30">
-                    <h4 class="f-left">Movies</h4>
+                    <h4 class="f-left">{{$leftMovie->category->name}}</h4>
                     <div class="latest-newss-button f-right">
-                        <a href="#">View More <i class="far fa-long-arrow-right"></i></a>
+                        <a href="{{route('category', $leftMovie->category->id)}}">View More <i class="far fa-long-arrow-right"></i></a>
                     </div>
                 </div>
                 <div class="row">
@@ -19,8 +19,8 @@
                                         <span><a href="#"><i class="far fa-calendar-alt"></i> 12 July 2018</a></span>
                                         <span><i class="far fa-comment"></i> (05)</span>
                                     </div>
-                                    <h3><a href="{{route('blog.show', $leftMovie->id)}}">{{$leftMovie->title}}</a></h3>
-                                    <a href="{{route('blog.show', $leftMovie->id)}}"><span>Read More</span> <i class="far fa-long-arrow-right"></i></a>
+                                    <h3><a href="{{$leftMovie->url}}">{{$leftMovie->title}}</a></h3>
+                                    <a href="{{$leftMovie->url}}"><span>Read More</span> <i class="far fa-long-arrow-right"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -31,13 +31,13 @@
                             @foreach($movies as $movie)
                             <div class="post-sm-list fix mb-20">
                                 <div class="post-sm-img f-left pos-rel">
-                                    <a href="{{route('blog.show', $movie->id)}}"><img src="{{$movie->image_url}}" alt=""></a>
+                                    <a href="{{$movie->url}}"><img src="{{$movie->image_url}}" alt=""></a>
                                 </div>
                                 <div class="post-2-content fix">
                                     <span class="recent-cart color-7"><a href="#">health</a></span>
                                     <h4><a href="{{route('blog.show', $movie->id)}}">{{$movie->title}}</a></h4>
                                     <div class="post-content-meta">
-                                        <span><a class="meta-11" href="#"><i class="far fa-user"></i> Kalima DJ</a></span>
+                                        <span><a class="meta-11" href="{{$movie->user_url}}"><i class="far fa-user"></i> {{$movie->user->name}}</a></span>
                                         <span><a class="meta-11" href="#"><i class="far fa-clock"></i> 25 Nov 2019</a></span>
                                     </div>
                                 </div>

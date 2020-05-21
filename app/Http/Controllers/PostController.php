@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
 use App\Post;
+use App\User;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
@@ -15,16 +17,16 @@ class PostController extends Controller
     public function index()
     {
         //
-        $posts = Post::latest()->take(4)->get();
-        $movies = Post::latest()->movie()->take(5)->get();
+        $posts = Post::with('category', 'user')->published()->latest()->take(4)->get();
+        $movies = Post::with('category', 'user')->published()->latest()->movie()->take(5)->get();
         $leftMovie = $movies->shift();
-        $lifeStyle = Post::life()->take(4)->get();
-        $business = Post::latest()->business()->take(9)->get();
-        $sports = Post::latest()->sport()->take(6)->get();
-        $internations = Post::latest()->internationals()->take(4)->get();
-        $local = Post::latest()->local()->take(1)->get();
-        $healths = Post::latest()->local()->take(4)->get();
-        $techs = Post::latest()->tech()->take(4)->get();
+        $lifeStyle = Post::with('category', 'user')->published()->latest()->life()->take(4)->get();
+        $business = Post::with('category', 'user')->published()->latest()->business()->take(9)->get();
+        $sports = Post::with('category', 'user')->published()->latest()->sport()->take(6)->get();
+        $internations = Post::with('category', 'user')->published()->latest()->internationals()->take(4)->get();
+        $local = Post::with('category', 'user')->published()->latest()->local()->take(1)->get();
+        $healths = Post::with('category', 'user')->published()->latest()->health()->take(4)->get();
+        $techs = Post::with('category', 'user')->published()->latest()->tech()->take(4)->get();
 
         return view('frontend.index', compact('lifeStyle', 'movies','leftMovie', 'business', 'sports',
             'internations', 'local', 'posts', 'healths', 'techs'));
@@ -60,11 +62,26 @@ class PostController extends Controller
     public function show(Post $post)
     {
         //
-        $post->increment('view_count');
+
+        $post->published()->increment('view_count');
 
         return view('frontend.show', compact('post'));
     }
 
+    public function category(Category $category)
+    {
+        $categoryName = $category->name;
+        $posts = $category->posts()->with('user', 'category')->published()->latest()->paginate(7);
+        return view('frontend.category', compact('category', 'posts', 'categoryName'));
+    }
+
+
+    public function user(User $user)
+    {
+        $userName = $user->name;
+       $userPost =  $user->posts()->published()->paginate(7);
+        return view('frontend.user', compact('user', 'userName', 'userPost'));
+    }
     /**
      * Show the form for editing the specified resource.
      *

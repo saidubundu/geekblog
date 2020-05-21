@@ -29,8 +29,7 @@ class PostTableSeeder extends Seeder
             $posts[]=[
                 'user_id' => rand(1,3),
                 'title' => $faker->sentence(rand(8, 12)),
-                'excerpt' => $faker->text(rand(250,300)),
-                'body' => $faker->paragraph(rand(10, 15), true),
+                'body' => $faker->paragraph(rand(40, 80), true),
                 'image' =>  $image,
                 'created_at' => $createdDate,
                 'updated_at' => $createdDate,
